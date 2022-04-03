@@ -80,3 +80,66 @@ car_2 = Car('v8', 'jeep')
 car_2.move()
 car_3 = Car('v10', 'cargo')
 car_3.move()
+
+# ------------------------------- Task 2-------------------------------------
+rand_num = random.randint(1, 5)
+number_particip = (int(input(f"Hello. Welcome to the car races.\n"
+                f"You can create your own car and take part in this competition.\n"
+                f"However, first of all you need to name the number of participants. ")))
+cars_particip = (f"Well {number_particip} participants will take part in this race.\n"
+                 f"Now every participant can create his own car.\n"
+                 f"So, you can create any car using available engines, wheels and car types.\n"
+                 f"Available car types: passenger, jeep, cargo.\n"
+                 f"Available engine types: v6, v8, v10.\n"
+                 f"Available wheel: simple - 15 kilos\n"
+                 f"So, your car were chosen! Let's start the race!")
+print(cars_particip)
+
+
+print('\n -------------------------------------------------------')
+print('Ready...')
+time.sleep(3)
+print('Go!')
+time.sleep(1)
+print('*')
+time.sleep(1)
+print('***')
+time.sleep(1)
+print('*****')
+print('The first participant is ahead!')
+time.sleep(1)
+print('*******')
+time.sleep(1)
+print('********')
+print(f"Wow! It is surprise. The {rand_num} participant was overtaken!")
+time.sleep(1)
+print('**********')
+time.sleep(1)
+print('**************')
+print(f"Halfway was gone by participant under the number {rand_num}!")
+time.sleep(1)
+print('*****************')
+print('Other participants is overtaking others!')
+time.sleep(1)
+print('***********************')
+print('The first participant has overtaken everyone!')
+time.sleep(1)
+print('***************************')
+time.sleep(2)
+print('*************************************')
+time.sleep(2)
+print('*********************************************')
+time.sleep(2)
+print('Each participant have a chance to win!')
+print('*******************************************************')
+time.sleep(2)
+print('*************************************************************************')
+time.sleep(2)
+print('Who will win? We will see soon')
+print('********************************************************************************')
+time.sleep(3)
+print('*************************************************************************************************()FINISH!!!!!()')
+random_num = random.randint(1, 5)
+print(f"Incredibly! The {random_num} participant successfully completed the race! You're a winner!\n"
+      f"You can try again if other participants don't mind.")
+
