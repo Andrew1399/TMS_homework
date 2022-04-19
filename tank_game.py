@@ -156,9 +156,9 @@ class HArmour(Armour):
 
 
 if __name__ == '__main__':
-    # my_projectile = HECatridge(Gun(100, 100), 1)
-    # print(my_projectile.get_damage())
-    # armor = HArmour(100, 'harmor')
-    # armor.is_penetrated(HECatridge(Gun(10, 100), 1))
-    # my_am = HECatridge(Gun(38, 50), 1)
-    # my_am.finish_off_stricken_enemy(39, 49, 99)
+    my_projectile = HECatridge(Gun(100, 100), 1)
+    print(my_projectile.get_damage())
+    armor = HArmour(100, 'harmor')
+    armor.is_penetrated(HECatridge(Gun(10, 100), 1))
+    my_am = HECatridge(Gun(38, 50), 1)
+    my_am.finish_off_stricken_enemy(39, 49, 99)
