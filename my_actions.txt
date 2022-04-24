@@ -1,0 +1,34 @@
+1)Создал таблицу студентов и поля (id,first_name, last_name, course, gender, age, group_id(с помощью этой колонки я связал студентов
+ и аудитории позже), указав их типы.
+2)Создал нескольких студентов в базе данных, используя команду INSERT INTO.
+3)Затем создал вторую таблицу с аудиториями(поля: id, number, aud_id и FOREIGN KEY(aud_id) REFERENCES students(group_id).
+Я связал id аудитории и id группы(у каждого студента своя группа и от группы зависит в какой аудитории будет студент, т.е. в одной аудитории
+может быть много студентов, но эти же студенты не могут быть в других аудиториях, пока я не поменяю id аудитории или группы, это насколько
+я понимаю, пока что не понял до конца как все это работает, потому что есть недочет с тем, что студенты могут переходить в другие аудитории
+и тогда тут получается другой механизм(пока до конца не понял) наверное нужно будет id менять либо делать какую-то другую привязку.
+4)Создал несколько аудиторий.
+5)Проверил или все колонки были созданы правильно, для этого воспользовался следующими командами:
+.headers ON
+.mode column
+SELECT *
+FROM students
+WHERE 1;
+
+6) Затем также проверил вторую таблицу, но уже без первых двух команд.
+7) затем ввел команды  SELECT number, A.first_name, A.last_name, A.course FROM audiences JOIN students as A on audiences.aud_id=A.group_id
+WHERE A.course = 'Python developer'; и вывелись ожидаемые результаты
+310     Pavel       Iaroh      Python developer
+310     Anastasia   Juk        Python developer
+310     Elena       White      Python developer
+
+SELECT number, A.first_name, A.last_name, A.course FROM audiences JOIN students as A on audiences.aud_id=A.group_id
+WHERE A.course = 'Java developer';
+305     Andrew      Rob        Java developer
+305     Dmitry      Savich     Java developer
+
+SELECT number, A.first_name, A.last_name, A.course FROM audiences JOIN students as A on audiences.aud_id=A.group_id
+WHERE A.course == 'C++ developer';
+330     Jack        Cope       C++ developer
+330     Kris        Low        C++ developer
+
+8) сохранил таблицу с помощью команды .save
