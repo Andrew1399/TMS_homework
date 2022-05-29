@@ -1,0 +1,18 @@
+# Generic
+__pycache__/
+.python-version
+venv/
+.idea/
+.vscode/
+.cache
+.env
+.pydevproject
+.project
+.settings/
+
+# Project specific
+config/*_local.*
+config/.env
+.pytest_cache/
+/media/
+docs/sphinx/build/
