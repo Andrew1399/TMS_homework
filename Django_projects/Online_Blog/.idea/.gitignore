@@ -17,9 +17,17 @@ static/
 build/
 dist/
 
+<<<<<<< HEAD
 online_blog/settings.py
 
 # eggs
 *.egg-info
 
+=======
+# eggs
+*.egg-info
+
+setenv.sh
+
+>>>>>>> 136783e82f3b8d95f0de51aa8dda2ecc7ea457d4
 *xlsx#

@@ -47,3 +47,29 @@ def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("users:index")
+<<<<<<< HEAD
+=======
+
+
+
+
+
+# def signup(request):
+#     """Регистриурет нового пользователя."""
+#     if request.method != 'POST':
+#         # Display blank registration form.
+#         form = UserCreationForm()
+#     else:
+#         # Обработка заполненной формы.
+#         form = UserCreationForm(data=request.POST)
+#
+#         if form.is_valid():
+#             new_user = form.save()
+#             # Выполнение входа и перенаправление на домашнюю страницу.
+#             return redirect('users:index')
+#     context = {'form': form}
+#     return render(request, 'users/signup.html', context)
+
+
+
+>>>>>>> 136783e82f3b8d95f0de51aa8dda2ecc7ea457d4
