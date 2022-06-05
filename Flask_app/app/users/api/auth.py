@@ -14,7 +14,6 @@ def signup():
 def signup_post():
     username = request.form.get('username')
     password = request.form.get('password')
-
     user = User.query.filter_by(username=username).first()
 
     if user:

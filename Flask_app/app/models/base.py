@@ -5,7 +5,6 @@ from flask_login import UserMixin
 
 db = flask_sqlalchemy.SQLAlchemy()
 
-
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = sa.Column(
@@ -15,7 +14,3 @@ class User(UserMixin, db.Model):
     )
     username = sa.Column(sa.String(255), unique=True)
     password = sa.Column(sa.String(255))
-
-
-
-
