@@ -60,6 +60,8 @@ coverage.xml
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+Django_projects/Online_Blog/.idea
+Django_projects/Online_Blog/online_blog/settings.py
 
 # Flask stuff:
 instance/
