@@ -66,10 +66,11 @@ Django_projects/Online_Blog/online_blog/settings.py
 Django_projects/Online_Blog/static
 Django_projects/Online_Blog/profile_image
 =======
-Django_projects/Online Blog/online_blog/settings.py
-Django_projects/Online Blog/.idea
-Django_projects/Online Blog/posts/migrations
-Django_projects/Online Blog/users/migrations
+Django projects/Online Blog/online_blog/settings.py
+Django projects/Online Blog/.idea
+Django projects/Online Blog/db.sqlite3
+Django projects/Online Blog/posts/migrations
+Django projects/Online Blog/users/migrations
 
 # Flask stuff:
 instance/
