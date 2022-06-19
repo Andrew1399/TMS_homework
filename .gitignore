@@ -62,6 +62,9 @@ db.sqlite3
 db.sqlite3-journal
 Django_projects/Online_Blog/.idea
 Django_projects/Online_Blog/online_blog/settings.py
+Django_projects/Online Blog/posts/migrations
+Django_projects/Online Blog/users/migrations
+Django_projects/Online Blog/db.sqlite3
 
 # Flask stuff:
 instance/
