@@ -1,0 +1,14 @@
+{% extends "users/base.html" %}
+
+{% block page_header %}
+  <div class='jumbotron'>
+    <h1 class="display-3">Create your own Blog!</h1>
+    <p class="lead">Make your own Blog or read other authors' posts, whatever. You can
+        choose your favorite post, you can leave comments and put likes or dislikes.
+        You have an opportunity to sign up like a writer to make your own posts
+        or like a reader to read other posts.
+    <a class="btn btn-lg btn-info" href="{% url 'users:register' %}"
+      role="button">Sign up &raquo;</a>
+  </div>
+
+{% endblock page_header %}
