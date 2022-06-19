@@ -1,0 +1,155 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block head_title %}{{ user.username }} | Django Blog{% endblock head_title %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          {% if user.profile.image %}
+          <img src="{{ profile.image.url }}" alt="{{ user.username }}"  style="width: 200px;">
+          {% else %}
+          <img class="card-img-top col-sm-3 col-4 my-3" src="{% static 'img/user.jpg' %}" alt="{{ user.username }}">
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{ user.username }}
+          </h5>
+          <h6>
+            {{ user.profile.activity }}
+          </h6>
+          <p class="proile-rating">Last login on: {{ user.last_login }}</p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <p>ABOUT ME</p>
+          <p class="card-text"><mark>{{ user.profile.about_me }}</mark></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+          <div class="h6 text-muted">
+            Followers: {{ user.follower.count }} <br />
+            Following: {{ user.following.count }}
+          </div>
+
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">
+              {{ user.profile.posts.count }}
+            </div>
+          </li>
+          <li class="list-group-item">
+            {% if user != user.profile %}
+              {% if following %}
+              <a class="btn btn-lg btn-danger"
+                 href="{% url 'users:profile_unfollow' user.username %}" role="button">
+                 Unfollow
+              </a>
+              {% else %}
+              <a class="btn btn-lg btn-info"
+                 href="{% url 'users:profile_follow' user.username %}" role="button">
+                Follow
+              </a>
+              {% endif %}
+            {% endif %}
+          </li>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Username</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.username }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Email</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.email }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Country</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.profile.country }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Activity</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{ user.profile.activity }}</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+<!--  <div class="row">-->
+<!--    <div class="card col-lg-6 offset-lg-3 mb-3">-->
+<!--      <div class="row">-->
+<!--        {% if user.profile.image %}-->
+<!--        <img src="{{ profile.image.url }}" alt="{{ user.username }}" class="rounded-circle img-fluid" style="width: 200px;">-->
+<!--        {% else %}-->
+<!--        <img class="card-img-top col-sm-3 col-4 my-3" src="{% static 'img/user.jpg' %}" alt="{{ user.username }}">-->
+<!--        {% endif %}-->
+<!--        <div class="container">-->
+<!--          <h2 class="card-title my-3">{{ user.username }}</h2>-->
+<!--          <p>Last login on: {{ user.last_login }}</p>-->
+<!--          <p class="text-secondary">Email: {{ user.email }}</p>-->
+<!--          <p><a href="{% url 'users:edit_profile' %}">Edit your profile</a></p>-->
+<!--          <p><a href="{% url 'users:password_change' %}">Change password</a></p>-->
+<!--          <p>About me:</p>-->
+<!--          <p class="card-text">{{ user.profile.about_me }}</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="container-fluid mt-5">-->
+<!--  <div class="row">-->
+<!--    <div class="row">-->
+<!--      <div class="container">-->
